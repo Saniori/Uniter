@@ -6,9 +6,7 @@
 ```php
 $Cortege = new \S1ptex\Uniter\Cortege("Супер-пупер набор тестов");
 ```
-
 ### Теперь добавим тест
-
 ```php
 $Cortege->add("Один плюс один равно два", function(\S1ptex\Uniter\Test $test){
 
@@ -16,10 +14,9 @@ $Cortege->add("Один плюс один равно два", function(\S1ptex\U
 
 })
 ```
-
 ### Выведем кортеж
 ```php
 $Cortege->execute();
 ```
-
-
+### Можно запускать
+php8.1 name_of_file.php
