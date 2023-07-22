@@ -2,4 +2,6 @@
 
 ## Класс Cortege
 
-```new \S1ptex\Uniter\Cortege("name of test cortege");```
+```php
+new \S1ptex\Uniter\Cortege("name of test cortege");
+```
