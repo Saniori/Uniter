@@ -19,4 +19,6 @@ $Cortege->add("Один плюс один равно два", function(\S1ptex\U
 $Cortege->execute();
 ```
 ### Можно запускать
+```bash
 php8.1 name_of_file.php
+```
