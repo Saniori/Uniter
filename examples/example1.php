@@ -1,13 +1,13 @@
 <?php
 
-require "../vendor/autoload.php";
+require __DIR__."/../vendor/autoload.php";
 
-$Cortege = new \S1ptex\Uniter\Cortege("Супер-пупер набор тестов");
+$Cortege = new \S1ptex\Uniter\Cortege("Test Cortege");
 
-$Cortege->add("Один плюс один равно два", function(\S1ptex\Uniter\Test $test){
+$Cortege->add("One plus One is Two", function(\S1ptex\Uniter\Test $test){
 
-    $test->assert(1+1 === 2);
-  
+    $test->assert(1+1 === 2); // Is necessarily method in test
+
 });
 
 $Cortege->execute();

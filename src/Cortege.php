@@ -25,7 +25,7 @@ class Cortege
         $countPassedTests = 0;
         $leadTime = 0;
 
-        print("Кортеж \"{$this->name}\" запущен: " . PHP_EOL);
+        print("Cortege \"{$this->name}\" started: " . PHP_EOL);
 
         foreach ($this->tests as $test) {
 
@@ -44,7 +44,7 @@ class Cortege
         $percent = $countPassedTests / $countTests * 100;
         $formattedLeadTime = number_format($leadTime, 10, ".");
 
-        print("Пройдено $countPassedTests из $countTests | $percent%  за {$formattedLeadTime}s" . PHP_EOL);
+        print("Passed $countPassedTests of $countTests | $percent%  in {$formattedLeadTime}s" . PHP_EOL);
 
     }
 

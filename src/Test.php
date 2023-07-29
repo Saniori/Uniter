@@ -43,13 +43,13 @@ class Test
 
         if (!$this->isPassed()) {
 
-            print("❌ Тест \"{$this->name}\" .............................................. не пройден" . PHP_EOL);
+            print("❌ Test \"{$this->name}\" .............................................. failed" . PHP_EOL);
 
             return;
 
         }
 
-        print("✅ Тест \"{$this->name}\" .............................................. пройден за {$formattedLeadTime}s" . PHP_EOL);
+        print("✅ Test \"{$this->name}\" .............................................. passed in {$formattedLeadTime}s" . PHP_EOL);
 
     }
 
