@@ -6,7 +6,7 @@ class Test
 {
 
     private bool $passed = false;
-    public float|string $leadTime;
+    private float|string $leadTime;
 
     /**
      * @param string $name
@@ -62,6 +62,14 @@ class Test
 
         $this->passed = $statement;
 
+    }
+
+    /**
+     * @return float|string
+     */
+    public function getLeadTime(): float|string
+    {
+        return $this->leadTime;
     }
 
 }

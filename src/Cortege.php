@@ -35,7 +35,7 @@ class Cortege
 
             }
 
-            $leadTime += $test->lead_time;
+            $leadTime += $test->getLeadTime();
 
             $test->execute();
 
