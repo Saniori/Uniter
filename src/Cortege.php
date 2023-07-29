@@ -2,44 +2,50 @@
 
 namespace S1ptex\Uniter;
 
-class Cortege{
+class Cortege
+{
 
-    private array $tests = array();
+    private array $tests = [];
 
-    public function __construct(private string $name){}
-    public function add(string $name, Callable $callback){
+    public function __construct(private string $name)
+    {
+    }
+
+    public function add(string $name, callable $callback): void
+    {
 
         $this->tests[] = new Test($name, $callback);
 
     }
-    public function execute(){
 
-        $count_tests = count($this->tests);
-        $count_passed_tests = 0;
-        $lead_time = 0;
+    public function execute(): void
+    {
 
-        print("Кортеж \"{$this->name}\" запущен: ".PHP_EOL);
+        $countTests = count($this->tests);
+        $countPassedTests = 0;
+        $leadTime = 0;
 
-        foreach($this->tests as $test){
+        print("Кортеж \"{$this->name}\" запущен: " . PHP_EOL);
 
-            if($test->isPassed()){
+        foreach ($this->tests as $test) {
 
-                $count_passed_tests += 1;
+            if ($test->isPassed()) {
+
+                $countPassedTests += 1;
 
             }
 
-            $lead_time += $test->lead_time;
+            $leadTime += $test->lead_time;
 
             $test->execute();
 
         }
-        
-        $count_failed_tests = $count_tests - $count_passed_tests;
-        $percent = $count_passed_tests / $count_tests * 100;
-        $formatted_lead_time = number_format($lead_time, 10, ".");
 
-        print("Пройдено $count_passed_tests из $count_tests | $percent%  за {$formatted_lead_time}s".PHP_EOL);
-        
+        $percent = $countPassedTests / $countTests * 100;
+        $formattedLeadTime = number_format($leadTime, 10, ".");
+
+        print("Пройдено $countPassedTests из $countTests | $percent%  за {$formattedLeadTime}s" . PHP_EOL);
+
     }
 
 }

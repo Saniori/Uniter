@@ -2,44 +2,65 @@
 
 namespace S1ptex\Uniter;
 
-class Test{
+class Test
+{
 
     private bool $passed = false;
-    private bool $asserted = false;
-    public float | string $lead_time;
-    public function __construct(private string $name, private $callback){
+    public float|string $leadTime;
+
+    /**
+     * @param string $name
+     * @param $callback
+     */
+    public function __construct(private string $name, private $callback)
+    {
 
         $start = microtime(true);
 
         $callback($this);
 
-        $this->lead_time = microtime(true) - $start;
+        $this->leadTime = microtime(true) - $start;
 
     }
-    public function isPassed() : bool{
+
+    /**
+     * @return bool
+     */
+    public function isPassed(): bool
+    {
 
         return $this->passed;
 
     }
-    public function execute(){
 
-        $formatted_lead_time = number_format($this->lead_time, 10, ".");
+    /**
+     * @return void
+     */
+    public function execute(): void
+    {
 
-        if(!$this->isPassed()){
+        $formattedLeadTime = number_format($this->leadTime, 10, ".");
 
-            print("❌ Тест \"{$this->name}\" .............................................. не пройден".PHP_EOL);
+        if (!$this->isPassed()) {
+
+            print("❌ Тест \"{$this->name}\" .............................................. не пройден" . PHP_EOL);
 
             return;
 
         }
 
-        print("✅ Тест \"{$this->name}\" .............................................. пройден за {$formatted_lead_time}s".PHP_EOL);
+        print("✅ Тест \"{$this->name}\" .............................................. пройден за {$formattedLeadTime}s" . PHP_EOL);
 
     }
-    public function assert(bool $statement){
+
+    /**
+     * @param bool $statement
+     * @return void
+     */
+    public function assert(bool $statement): void
+    {
 
         $this->passed = $statement;
-        $this->asserted = true;
 
     }
 
