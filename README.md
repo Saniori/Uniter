@@ -1,24 +1,30 @@
-# Uniter - Быстрое создание юнит тестов
+# Uniter - PHP 8.1 Library for quickly unit testing
 
-## Создание тестов
+## Instalation
 
-### Для начала необходимо создать кортеж тестов
-```php
-$Cortege = new \S1ptex\Uniter\Cortege("Супер-пупер набор тестов");
+```bash
+composer require s1ptex/uniter
 ```
-### Теперь добавим тест
+
+## Usage
+
+### First you need to create a cortege of testsв
 ```php
-$Cortege->add("Один плюс один равно два", function(\S1ptex\Uniter\Test $test){
+$Cortege = new \S1ptex\Uniter\Cortege("Test cortege");
+```
+### Now add test
+```php
+$Cortege->add("One plus One is Two", function(\S1ptex\Uniter\Test $test){
 
   $test->assert(1+1 === 2);
 
 });
 ```
-### Выведем кортеж
+### Print cortege
 ```php
 $Cortege->execute();
 ```
-### Можно запускать
+### Let's run
 ```bash
 php8.1 name_of_file.php
 ```
